@@ -13,19 +13,19 @@ public class BoundedBall extends MovableBall{
         super(x, y, radius, color);
         bounds = new Rectangle(x-radius, y-radius, 2*radius, 2*radius);
     }
-    
     public BoundedBall(int x, int y, int radius){ // bounds 경계 설정을 위해 값을 가져옴
         this(x, y, radius, Color.BLUE);
     }
 
+
     public Rectangle getBounds(){
         return bounds;
     }
-
     public void setBounds(Rectangle bounds){
         this.bounds = bounds;
     }
 
+    
     public boolean isOutOfBounds(){ 
         //공이 이동한 후의 region이 bounds의 범위를 벗어나는 지 확인
         //교차된 영역의 가로, 세로 값이 공 영역인 region 값과 다르면 경계를 벗어난것.
@@ -57,12 +57,4 @@ public class BoundedBall extends MovableBall{
             bounce();
         }
     }
-
-
-
-
-
-
-
-
 }
