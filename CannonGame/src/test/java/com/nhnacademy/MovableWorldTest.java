@@ -25,8 +25,8 @@ public class MovableWorldTest {
 
         //World를 정의해야 ball을 사용 가능
         MovableWorld world = new MovableWorld(MAX_MOVE_COUNT);
-        frame.add(world);
         frame.setSize(WIDTH, HEIGHT);
+        frame.add(world);
         frame.setVisible(true);
 
         //랜덤한 ball 생성. 랜덤함 x, y 좌표값, 랜덤한 dx, dy값 설정
@@ -46,6 +46,7 @@ public class MovableWorldTest {
             world.add(ball);
 
         }
+        
         // 지정한 횟수만큼 ball을 move()
         world.run();;   
     }
