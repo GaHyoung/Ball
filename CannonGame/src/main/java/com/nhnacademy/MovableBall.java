@@ -12,6 +12,10 @@ public class MovableBall extends Ball{
         this.dy = 0;
     }
 
+    public MovableBall(int x, int y, int radius){
+        this(x, y, radius, Color.BLUE);
+    }
+
     public int getDX(){
         return dx;
     }

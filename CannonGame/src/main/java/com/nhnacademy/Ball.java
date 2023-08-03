@@ -49,7 +49,7 @@ public class Ball {
     public void paint(Graphics g){
         Color oldColor = getColor();
         g.setColor(color);
-        g.fillRect(x-radius, y-radius, 2*radius, 2*radius);
+        g.fillOval(x-radius, y-radius, 2*radius, 2*radius);
         g.setColor(oldColor);
     }
 
