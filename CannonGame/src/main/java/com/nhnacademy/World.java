@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 
 public class World extends JPanel {
 
-    List<Ball> ballList;
+    List<Ball> ballList; //List<자료형 or 클래스> -> Generics타입
 
     public World(){ //생성자 -> 상위클래스 호출, ballList 초기화
         super();
