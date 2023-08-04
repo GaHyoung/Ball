@@ -9,7 +9,7 @@ public class MovableWorld extends World {
         super();
         movementCount = 0;
         this.maxMovementCount = maxMovementCount;
-        dt = 1000;
+        dt = 100;
     }
 
     public void reset() { // 상태를 초기화
@@ -26,7 +26,7 @@ public class MovableWorld extends World {
     }
 
     public void run() { //지정한 횟수만큼 ball을 이동. 이동한 후에는 sleep
-        for (int i = 0; i < maxMovementCount; i++) {
+        for (int i = 0; i < getMaxMovementCount(); i++) {
             move();
             try {
                 Thread.sleep(dt);

@@ -21,8 +21,10 @@ public class BoundedWorldTest {
         BoundedWorld world = new BoundedWorld();
         frame.setSize(WIDTH, HEIGHT);
         frame.add(world);
+        world.setDT(30);
         frame.setVisible(true);
 
+        //BoundedBall로 ball을 생성 시 BoundedWorld의 경계에 갇혀 이동 범위가 더 작다.
         MovableBall ball1 = new MovableBall(100, 100, 30);
         ball1.setDX(20);
         ball1.setDY(10);
@@ -32,6 +34,9 @@ public class BoundedWorldTest {
         ball2.setDX(10);
         ball2.setDY(-10);
         world.add(ball2);
+
+        Ball staticBall = new Ball(200, 150, 30, Color.YELLOW);
+        world.add(staticBall);
 
         world.run();
     }

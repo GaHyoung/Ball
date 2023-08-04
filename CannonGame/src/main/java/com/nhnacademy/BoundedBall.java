@@ -25,16 +25,16 @@ public class BoundedBall extends MovableBall{
         this.bounds = bounds;
     }
 
-    
+
     public boolean isOutOfBounds(){ 
         //공이 이동한 후의 region이 bounds의 범위를 벗어나는 지 확인
         //교차된 영역의 가로, 세로 값이 공 영역인 region 값과 다르면 경계를 벗어난것.
         //Rectangle에 getWidth와 getHeight 있음.
-        Rectangle region = new Rectangle(getX()-getRadius(), getY()-getRadius(), 2*getRadius(), 2*getRadius());
+        Rectangle ballRegion = new Rectangle(getX()-getRadius(), getY()-getRadius(), 2*getRadius(), 2*getRadius());
 
-        Rectangle intersection = bounds.intersection(region);
+        Rectangle intersection = bounds.intersection(ballRegion);
 
-        return intersection.getWidth() != region.getWidth() || intersection.getHeight() != region.getHeight();
+        return intersection.getWidth() != ballRegion.getWidth() || intersection.getHeight() != ballRegion.getHeight();
     }
 
 

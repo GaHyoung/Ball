@@ -2,12 +2,14 @@ package com.nhnacademy;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 public class Ball {
     private int x;
     private int y;
     private int radius;
     private Color color;
+    Rectangle region;
 
     public Ball(int x, int y, int radius){
         this(x, y, radius, Color.BLUE);
@@ -31,6 +33,11 @@ public class Ball {
     }
     public Color getColor(){
         return color;
+    }
+
+    // 물체간 충돌하지 않도록 World의 add메소드에서 사용할 getRegion()추가
+    public Rectangle getRegion(){ //region을 부를 때마다 새로운 영역값이 생성되어 ball이 새로 그려질때 region도 함께 움직여야한다.
+        return new Rectangle(getX()-getRadius(), getY()-getRadius(), 2 * getRadius(), 2 * getRadius());
     }
 
     public void setX(int x){

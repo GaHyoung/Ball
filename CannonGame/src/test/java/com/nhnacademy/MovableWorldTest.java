@@ -43,7 +43,7 @@ public class MovableWorldTest {
             MovableBall ball = new MovableBall(x, y, radius);
             ball.setDX(dx);
             ball.setDY(dy);
-            world.add(ball);
+            world.add(ball); //현재 world의 add가 겹치는 영역이 있으면 런타임에러가 나므로 실행이 안됨.
 
         }
         
